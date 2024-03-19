@@ -11,4 +11,4 @@ python examples/scripts/reward_modeling.py \
     --optim="adamw_torch" \
     --logging_steps=10 \
     --evaluation_strategy="steps" \
-    --max_length=512 \
+    --max_length=512
