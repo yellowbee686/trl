@@ -88,6 +88,7 @@ if __name__ == "__main__":
         for chosen, rejected in zip(examples["chosen"], examples["rejected"]):
             tokenized_chosen = tokenizer(chosen)
             tokenized_rejected = tokenizer(rejected)
+            print(f'chosen:{chosen} mask:{tokenized_chosen["attention_mask"]}')
 
             new_examples["input_ids_chosen"].append(tokenized_chosen["input_ids"])
             new_examples["attention_mask_chosen"].append(tokenized_chosen["attention_mask"])
