@@ -29,19 +29,21 @@ _import_structure = {
         "peft_module_casting_to_bf16",
         "RichProgressCallback",
     ],
-    "dpo_trainer": [
-        "DPOTrainer",
-    ],
-    "iterative_sft_trainer": [
-        "IterativeSFTTrainer",
-    ],
+    "dpo_config": ["DPOConfig"],
+    "dpo_trainer": ["DPOTrainer"],
+    "cpo_config": ["CPOConfig"],
+    "cpo_trainer": ["CPOTrainer"],
+    "iterative_sft_trainer": ["IterativeSFTTrainer"],
     "kto_config": ["KTOConfig"],
     "kto_trainer": ["KTOTrainer"],
     "model_config": ["ModelConfig"],
+    "orpo_config": ["ORPOConfig"],
+    "orpo_trainer": ["ORPOTrainer"],
     "ppo_config": ["PPOConfig"],
     "ppo_trainer": ["PPOTrainer"],
     "reward_config": ["RewardConfig"],
     "reward_trainer": ["RewardTrainer", "compute_accuracy"],
+    "sft_config": ["SFTConfig"],
     "sft_trainer": ["SFTTrainer"],
     "base": ["BaseTrainer"],
     "ddpo_config": ["DDPOConfig"],
@@ -74,15 +76,21 @@ if TYPE_CHECKING:
     from .base import BaseTrainer
     from .ddpo_config import DDPOConfig
 
+    from .dpo_config import DPOConfig
     from .dpo_trainer import DPOTrainer
     from .iterative_sft_trainer import IterativeSFTTrainer
+    from .cpo_config import CPOConfig
+    from .cpo_trainer import CPOTrainer
     from .kto_config import KTOConfig
     from .kto_trainer import KTOTrainer
     from .model_config import ModelConfig
+    from .orpo_config import ORPOConfig
+    from .orpo_trainer import ORPOTrainer
     from .ppo_config import PPOConfig
     from .ppo_trainer import PPOTrainer
     from .reward_config import RewardConfig
     from .reward_trainer import RewardTrainer, compute_accuracy
+    from .sft_config import SFTConfig
     from .sft_trainer import SFTTrainer
 
     try:

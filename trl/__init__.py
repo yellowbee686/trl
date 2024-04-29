@@ -1,6 +1,6 @@
 # flake8: noqa
 
-__version__ = "0.8.2.dev0"
+__version__ = "0.8.7.dev0"
 
 from typing import TYPE_CHECKING
 from .import_utils import _LazyModule, is_diffusers_available, OptionalDependencyNotAvailable
@@ -21,6 +21,7 @@ _import_structure = {
         "is_diffusers_available",
         "is_npu_available",
         "is_peft_available",
+        "is_pil_available",
         "is_wandb_available",
         "is_xpu_available",
     ],
@@ -34,19 +35,25 @@ _import_structure = {
     ],
     "trainer": [
         "DataCollatorForCompletionOnlyLM",
+        "DPOConfig",
         "DPOTrainer",
+        "CPOConfig",
+        "CPOTrainer",
         "IterativeSFTTrainer",
         "KTOConfig",
         "KTOTrainer",
         "ModelConfig",
+        "ORPOConfig",
+        "ORPOTrainer",
         "PPOConfig",
         "PPOTrainer",
         "RewardConfig",
         "RewardTrainer",
+        "SFTConfig",
         "SFTTrainer",
     ],
     "commands": [],
-    "commands.utils": ["SftArgumentParser", "init_zero_verbose", "TrlParser", "DpoArgumentParser"],
+    "commands.cli_utils": ["init_zero_verbose", "SFTScriptArguments", "DPOScriptArguments", "TrlParser"],
     "trainer.utils": ["get_kbit_device_map", "get_peft_config", "get_quantization_config", "RichProgressCallback"],
     "multitask_prompt_tuning": [
         "MultitaskPromptEmbedding",
@@ -80,6 +87,7 @@ if TYPE_CHECKING:
         is_diffusers_available,
         is_npu_available,
         is_peft_available,
+        is_pil_available,
         is_wandb_available,
         is_xpu_available,
     )
@@ -93,19 +101,25 @@ if TYPE_CHECKING:
     )
     from .trainer import (
         DataCollatorForCompletionOnlyLM,
+        DPOConfig,
         DPOTrainer,
+        CPOConfig,
+        CPOTrainer,
         IterativeSFTTrainer,
         KTOConfig,
         KTOTrainer,
         ModelConfig,
+        ORPOConfig,
+        ORPOTrainer,
         PPOConfig,
         PPOTrainer,
         RewardConfig,
         RewardTrainer,
+        SFTConfig,
         SFTTrainer,
     )
     from .trainer.utils import get_kbit_device_map, get_peft_config, get_quantization_config, RichProgressCallback
-    from .commands.utils import init_zero_verbose, SftScriptArguments, DpoScriptArguments, TrlParser
+    from .commands.cli_utils import init_zero_verbose, SFTScriptArguments, DPOScriptArguments, TrlParser
 
     try:
         if not is_diffusers_available():
